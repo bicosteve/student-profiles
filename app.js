@@ -1,10 +1,21 @@
+const searchBar = document.getElementById("searchBar");
+
 const students = new API();
 const ui = new UI();
 
-students
-  .getStudent()
-  .then((data) => {
-    console.log(data.students);
-    ui.getStudents(data.students);
-  })
-  .catch((error) => console.log(error));
+function init() {
+  students
+    .getStudent()
+    .then((data) => {
+      ui.getStudents(data.students);
+    })
+    .catch((error) => console.log(error));
+}
+
+//filter students
+console.log(searchBar);
+searchBar.addEventListener("onkeyup", function (event) {
+  console.log(event);
+});
+
+init();

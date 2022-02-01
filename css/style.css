@@ -13,7 +13,7 @@ body {
 }
 
 .container {
-  max-width: 70%;
+  max-width: 65%;
   margin: 2rem auto;
   padding: 0.8rem 0.4rem;
   background-color: #ffffffff;
@@ -21,17 +21,36 @@ body {
   box-shadow: 0px 1px 31px 2px rgba(232, 223, 232, 0.5);
 }
 
+input {
+  width: 100%;
+  height: 1.8rem;
+  padding: 0.2rem 0.5rem;
+  border: none;
+  font-size: 90%;
+  border-bottom: 1px solid grey;
+  font-family: "Lato", sans-serif;
+}
+
+input:focus {
+  outline: none;
+  border-bottom: 1px solid grey;
+}
+
 .student_container {
   padding: 0.5rem 1rem;
   border-bottom: 1px solid grey;
-  margin: 0.8rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .image_container {
-  height: 100px;
-  width: 100px;
+  height: 110px;
+  width: 110px;
   border-radius: 50%;
-  margin-bottom: 0.5rem;
+  margin-right: 2.5rem;
+  border-bottom: 2px solid grey;
+  /* padding: 0.2rem; */
 }
 
 .image_container img {
@@ -41,7 +60,7 @@ body {
 }
 
 .student_details {
-  margin-top: 0.5rem;
+  width: 75%;
 }
 
 .student_details h5 {
