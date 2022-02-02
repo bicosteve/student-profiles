@@ -50,7 +50,6 @@ input:focus {
   border-radius: 50%;
   margin-right: 2.5rem;
   border-bottom: 2px solid grey;
-  /* padding: 0.2rem; */
 }
 
 .image_container img {
@@ -63,10 +62,24 @@ input:focus {
   width: 75%;
 }
 
-.student_details h5 {
+.header_content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.6rem;
+}
+
+.header_content h5 {
   font-weight: 900;
-  margin: 0.5rem 0;
+  margin: 0.2rem 0;
   font-size: 1.7rem;
+}
+
+.header_content button {
+  margin-right: 1rem;
+  border: none;
+  background-color: none;
+  padding: 0.5rem;
 }
 
 .student_detail_list .student__details-item {
@@ -75,4 +88,15 @@ input:focus {
   list-style-type: none;
   background-color: #c0c0c0;
   border-radius: 3px;
+}
+
+.students_marks {
+  margin: 1rem 0;
+  padding: 0 0.2rem;
+  display: none;
+}
+
+.students_marks li {
+  list-style-type: none;
+  margin: 0.1rem 0;
 }
