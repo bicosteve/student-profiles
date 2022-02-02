@@ -15,14 +15,11 @@ class UI {
   getStudents = (students) => {
     let html = "";
     return students.map((student) => {
-      const { company, email, firstName, grades, id, lastName, pic, skill } =
-        student;
+      const { company, email, firstName, grades, id, lastName, pic, skill } = student;
 
       const average =
-        grades.reduce(
-          (total, current) => parseInt(total) + parseInt(current),
-          0
-        ) / grades.length;
+        grades.reduce((total, current) => parseInt(total) + parseInt(current), 0) /
+        grades.length;
 
       html = `
         <div id="${id}" class="student_container">
@@ -33,16 +30,14 @@ class UI {
                 <div class="header_content">
                   <h5>${firstName.toUpperCase()}  ${lastName.toUpperCase()}</h5>
                   <button id="marks_toggle">
-                    <i class="fa fa-plus fa-2x marks_toggle"></i>
+                    <i class="fa fa-plus marks_toggle"></i>
                   </button>
                 </div>
                 <ul class="student_detail_list">
                   <li class="student__details-item">Email - ${email}</li>
                   <li class="student__details-item">Company - ${company}</li>
                   <li class="student__details-item">Skill - ${skill}</li>
-                  <li class="student__details-item">Average - ${average.toFixed(
-                    2
-                  )}%</li>
+                  <li class="student__details-item">Average - ${average.toFixed(2)}%</li>
                 </ul>
                 <ul id="${id}" class="students_marks">
                     ${this.loopGrade(grades)}
@@ -66,14 +61,11 @@ class UI {
     });
 
     return filteredStudent.forEach((stud) => {
-      const { company, email, firstName, grades, id, lastName, pic, skill } =
-        stud;
+      const { company, email, firstName, grades, id, lastName, pic, skill } = stud;
 
       const average =
-        grades.reduce(
-          (total, current) => parseInt(total) + parseInt(current),
-          0
-        ) / grades.length;
+        grades.reduce((total, current) => parseInt(total) + parseInt(current), 0) /
+        grades.length;
 
       html = `
       <div id="${id}" class="student_container">
@@ -84,16 +76,14 @@ class UI {
         <div class="header_content">
           <h5>${firstName.toUpperCase()}  ${lastName.toUpperCase()}</h5>
           <button class="marks_toggle" id="marks_toggle">
-            <i class="fa fa-plus fa-2x"></i>
+            <i class="fa fa-plus marks_toggle"></i>
           </button>
         </div>
         <ul class="student_detail_list">
           <li class="student__details-item">Email - ${email}</li>
           <li class="student__details-item">Company - ${company}</li>
           <li class="student__details-item">Skill - ${skill}</li>
-          <li class="student__details-item">Average - ${average.toFixed(
-            2
-          )}%</li>
+          <li class="student__details-item">Average - ${average.toFixed(2)}%</li>
         </ul>
 
         <ul class="students_marks">
