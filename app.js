@@ -29,13 +29,20 @@ function search() {
 }
 
 studentContent.addEventListener("click", (event) => {
-  if (event.target.classList.contains("marks_toggle")) {
-    event.target.classList.remove("fa-plus");
-    event.target.classList.add("fa-minus");
-  }
+  const studentDetail = event.target.parentElement.parentElement.parentElement;
+  const studentMarks = studentDetail.querySelector(".students_marks");
 
-  const ul = studentContent.querySelector("ul");
-  console.log(ul);
+  if (event.target.classList.contains("marks_toggle")) {
+    if (event.target.classList.contains("fa-plus")) {
+      event.target.classList.remove("fa-plus");
+      event.target.classList.add("fa-minus");
+      studentMarks.style.display = "block";
+    } else if (event.target.classList.contains("fa-minus")) {
+      event.target.classList.add("fa-plus");
+      event.target.classList.remove("fa-minus");
+      studentMarks.style.display = "none";
+    }
+  }
 });
 
 initApp();

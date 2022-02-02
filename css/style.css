@@ -82,6 +82,10 @@ input:focus {
   padding: 0.5rem;
 }
 
+.header_content button:hover {
+  cursor: pointer;
+}
+
 .student_detail_list .student__details-item {
   margin: 0.3rem 0;
   padding: 0.2rem 0.5rem;
@@ -94,6 +98,12 @@ input:focus {
   margin: 1rem 0;
   padding: 0 0.2rem;
   display: none;
+}
+
+.students_marks_view {
+  margin: 1rem 0;
+  padding: 0 0.2rem;
+  display: block;
 }
 
 .students_marks li {

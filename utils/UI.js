@@ -4,10 +4,12 @@ class UI {
   }
 
   loopGrade = (arr) => {
-    return arr.map((item, index) => {
-      let number = 1 + index;
-      return `<li class="marks__list-item">Test${number}  ${item}%</li>`;
-    });
+    return arr
+      .map((item, index) => {
+        let number = 1 + index;
+        return `<li class="marks__list-item">Test${number} -  ${item}%</li>`;
+      })
+      .join("");
   };
 
   getStudents = (students) => {
