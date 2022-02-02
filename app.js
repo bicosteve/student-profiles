@@ -1,4 +1,5 @@
-const searchBar = document.getElementById("searchBar");
+const searchForm = document.getElementById("searchForm");
+const searchTerm = document.getElementById("searchTerm");
 
 const students = new API();
 const ui = new UI();
@@ -12,10 +13,16 @@ function init() {
     .catch((error) => console.log(error));
 }
 
-//filter students
-console.log(searchBar);
-searchBar.addEventListener("onkeyup", function (event) {
-  console.log(event);
-});
-
 init();
+
+searchForm.addEventListener("keyup", (event) => {
+  if (searchTerm.value && searchTerm.value !== "") {
+    students
+      .getStudent()
+      .then((data) => ui.searchStudent(data.students, searchTerm.value));
+  } else {
+    return;
+  }
+
+  event.preventDefault();
+});
