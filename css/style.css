@@ -90,12 +90,42 @@ input:focus {
   cursor: pointer;
 }
 
+.student_detail_list {
+  margin-bottom: 1.5rem;
+}
+
 .student_detail_list .student__details-item {
   margin: 0.3rem 0;
   padding: 0.2rem 0.5rem;
   list-style-type: none;
   background-color: #c0c0c0;
   border-radius: 3px;
+}
+
+/*TAG AREA*/
+.tag__area {
+  max-width: 20%;
+}
+
+.tag__area .tag {
+  background-color: #c0c0c0;
+  padding: 0.6rem;
+  text-align: center;
+  max-width: 70%;
+  margin: 0.5rem 0;
+  border-radius: 5px;
+  color: black;
+}
+
+.tag__area .tag p {
+  font-size: 0.9rem;
+}
+
+.tag__form input {
+  font-size: 0.8rem;
+  padding: 0.2rem 0.3rem;
+  font-size: 0.8rem;
+  font-family: "Raleway", sans-serif;
 }
 
 .students_marks {
