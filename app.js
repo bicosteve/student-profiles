@@ -28,22 +28,28 @@ function search() {
   });
 }
 
-studentContent.addEventListener("click", (event) => {
-  const studentDetail = event.target.parentElement.parentElement.parentElement;
-  const studentMarks = studentDetail.querySelector(".students_marks");
+//toggle on and off students list
+const toggleMarksList = () => {
+  studentContent.addEventListener("click", (event) => {
+    const studentDetail = event.target.parentElement.parentElement.parentElement;
+    const studentMarks = studentDetail.querySelector(".students_marks");
 
-  if (event.target.classList.contains("marks_toggle")) {
-    if (event.target.classList.contains("fa-plus")) {
-      event.target.classList.remove("fa-plus");
-      event.target.classList.add("fa-minus");
-      studentMarks.style.display = "block";
-    } else if (event.target.classList.contains("fa-minus")) {
-      event.target.classList.add("fa-plus");
-      event.target.classList.remove("fa-minus");
-      studentMarks.style.display = "none";
+    if (event.target.classList.contains("marks_toggle")) {
+      if (event.target.classList.contains("fa-plus")) {
+        event.target.classList.remove("fa-plus");
+        event.target.classList.add("fa-minus");
+        studentMarks.style.display = "block";
+      } else if (event.target.classList.contains("fa-minus")) {
+        event.target.classList.add("fa-plus");
+        event.target.classList.remove("fa-minus");
+        studentMarks.style.display = "none";
+      }
     }
-  }
-});
+  });
+};
+
+ui.addTag(studentContent);
 
 initApp();
 search();
+toggleMarksList();

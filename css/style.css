@@ -91,7 +91,7 @@ input:focus {
 }
 
 .student_detail_list {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .student_detail_list .student__details-item {
@@ -104,21 +104,26 @@ input:focus {
 
 /*TAG AREA*/
 .tag__area {
-  max-width: 20%;
+  max-width: 30%;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .tag__area .tag {
   background-color: #c0c0c0;
-  padding: 0.6rem;
+  padding: 0.2rem;
   text-align: center;
-  max-width: 70%;
-  margin: 0.5rem 0;
+  max-width: 60%;
+  margin: 0.2rem 0.1rem;
   border-radius: 5px;
   color: black;
 }
 
 .tag__area .tag p {
-  font-size: 0.9rem;
+  font-size: 0.6rem;
 }
 
 .tag__form input {

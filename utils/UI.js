@@ -15,14 +15,11 @@ class UI {
   getStudents = (students) => {
     let html = "";
     return students.map((student) => {
-      const { company, email, firstName, grades, id, lastName, pic, skill } =
-        student;
+      const { company, email, firstName, grades, id, lastName, pic, skill } = student;
 
       const average =
-        grades.reduce(
-          (total, current) => parseInt(total) + parseInt(current),
-          0
-        ) / grades.length;
+        grades.reduce((total, current) => parseInt(total) + parseInt(current), 0) /
+        grades.length;
 
       html = `
         <div id="${id}" class="student_container">
@@ -40,20 +37,29 @@ class UI {
                 <li class="student__details-item">Email - ${email}</li>
                 <li class="student__details-item">Company - ${company}</li>
                 <li class="student__details-item">Skill - ${skill}</li>
-                <li class="student__details-item">Average - ${average.toFixed(
-                  2
-                )}%</li>
+                <li class="student__details-item">Average - ${average.toFixed(2)}%</li>
               </ul>
               <div class="tag__area">
+              <div class="tags">
                 <div class="tag">
                   <p>New Tag</p>
                 </div>
-                <div class="tag__form">
-                  <form id="tagForm">
-                    <input type="text" id="tag" placeholder="Add Tag..." />
-                  </form>
+                <div class="tag">
+                  <p>New Tag</p>
+                </div>
+                <div class="tag">
+                  <p>New Tag</p>
+                </div>
+                <div class="tag">
+                  <p>New Tag</p>
                 </div>
               </div>
+              <div class="tag__form">
+                <form id="tagForm" class="tag-form">
+                  <input type="text" id="tag" class="tag_input" placeholder="Add a tag..." />
+                </form>
+              </div>
+            </div>
               <ul id="${id}" class="students_marks">
                   ${this.loopGrade(grades)}
               </ul>
@@ -75,14 +81,11 @@ class UI {
     });
 
     return filteredStudent.forEach((stud) => {
-      const { company, email, firstName, grades, id, lastName, pic, skill } =
-        stud;
+      const { company, email, firstName, grades, id, lastName, pic, skill } = stud;
 
       const average =
-        grades.reduce(
-          (total, current) => parseInt(total) + parseInt(current),
-          0
-        ) / grades.length;
+        grades.reduce((total, current) => parseInt(total) + parseInt(current), 0) /
+        grades.length;
 
       html = `
       <div id="${id}" class="student_container">
@@ -100,26 +103,53 @@ class UI {
           <li class="student__details-item">Email - ${email}</li>
           <li class="student__details-item">Company - ${company}</li>
           <li class="student__details-item">Skill - ${skill}</li>
-          <li class="student__details-item">Average - ${average.toFixed(
-            2
-          )}%</li>
+          <li class="student__details-item">Average - ${average.toFixed(2)}%</li>
         </ul>
         <div class="tag__area">
-          <div class="tag">
-            <p>New Tag</p>
+          <div class="tags">
+            <div class="tag">
+              <p>New Tag</p>
+            </div>
+            <div class="tag">
+              <p>New Tag</p>
+            </div>
+            <div class="tag">
+              <p>New Tag</p>
+            </div>
+            <div class="tag">
+              <p>New Tag</p>
+            </div>
           </div>
           <div class="tag__form">
-            <form id="tagForm">
-              <input type="text" id="tag" placeholder="Add Tag..." />
+            <form id="tagForm" class="tag-form">
+              <input type="text" id="tag" class="tag_input" placeholder="Add a tag..." />
             </form>
           </div>
-          </div>
+        </div>
         <ul class="students_marks">
           ${this.loopGrade(grades)}
         </ul>
       </div>
     </div>`;
       this.studentContent.innerHTML += html;
+    });
+  };
+
+  addTag = (element) => {
+    element.addEventListener("keyup", (event) => {
+      if (event.target.classList.contains("tag_input")) {
+        //getting the form input value
+        const inputValue = event.target.value;
+
+        //selecting form as parent from the child which is input
+        const form = event.target.parentElement;
+
+        //adding event listener to the form
+        form.addEventListener("submit", (event) => {
+          event.preventDefault();
+          console.log(inputValue);
+        });
+      }
     });
   };
 }
